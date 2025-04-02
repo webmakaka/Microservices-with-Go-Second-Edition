@@ -1,0 +1,9 @@
+api:
+  port: 8081
+prometheus:
+  metricsPort: 8091
+serviceDiscovery:
+  consul:
+    address: http://localhost:8500
+jaeger:
+  url: http://localhost:14268/api/traces
