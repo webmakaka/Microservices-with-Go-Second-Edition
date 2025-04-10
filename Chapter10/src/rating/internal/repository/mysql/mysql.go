@@ -3,9 +3,9 @@ package mysql
 import (
 	"context"
 	"database/sql"
+	"errors"
 
 	_ "github.com/go-sql-driver/mysql"
-	"movieexample.com/rating/internal/repository"
 	"movieexample.com/rating/pkg/model"
 )
 
@@ -47,6 +47,9 @@ func (r *Repository) Get(ctx context.Context, recordID model.RecordID, recordTyp
 
 // Put adds a rating for a given record.
 func (r *Repository) Put(ctx context.Context, recordID model.RecordID, recordType model.RecordType, rating *model.Rating) error {
+	if rating == nil {
+		return errors.New("rating is nil")
+	}
 	_, err := r.db.ExecContext(ctx, "INSERT INTO ratings (record_id, record_type, user_id, value) VALUES (?, ?, ?, ?)",
 		recordID, recordType, rating.UserID, rating.Value)
 	return err
