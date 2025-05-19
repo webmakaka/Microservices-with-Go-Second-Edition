@@ -2,9 +2,13 @@ package main
 
 import (
 	"context"
+	"crypto/md5"
+	"crypto/rand"
+	"flag"
 	"fmt"
 	"net"
 	"net/http"
+	_ "net/http/pprof"
 	"os"
 	"time"
 
@@ -31,6 +35,22 @@ const serviceName = "metadata"
 func main() {
 	logger, _ := zap.NewProduction()
 	defer logger.Sync()
+
+	// Temporary logic to demonstrate CPU load for profiling.
+	simulateCPULoad := flag.Bool("simulatecpuload",
+		false, "simulate CPU load for profiling")
+	flag.Parse()
+	if *simulateCPULoad {
+		go heavyOperation()
+	}
+
+	go func() {
+		logger.Info("Starting the profiler")
+		if err := http.ListenAndServe("localhost:6060", nil); err != nil {
+			logger.Fatal("Failed to start profiler handler",
+				zap.Error(err))
+		}
+	}()
 
 	f, err := os.Open("default.yaml")
 	if err != nil {
@@ -106,5 +126,13 @@ func main() {
 	gen.RegisterMetadataServiceServer(srv, h)
 	if err := srv.Serve(lis); err != nil {
 		panic(err)
+	}
+}
+
+func heavyOperation() {
+	for {
+		token := make([]byte, 1024)
+		rand.Read(token)
+		md5.New().Write(token)
 	}
 }

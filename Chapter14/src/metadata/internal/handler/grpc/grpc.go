@@ -15,47 +15,76 @@ import (
 // Handler defines a movie metadata gRPC handler.
 type Handler struct {
 	gen.UnimplementedMetadataServiceServer
-	ctrl  *metadata.Controller
-	scope tally.Scope
+	ctrl               *metadata.Controller
+	getMetadataMetrics *EndpointMetrics
+	putMetadataMetrics *EndpointMetrics
 }
 
 // New creates a new movie metadata gRPC handler.
 func New(ctrl *metadata.Controller, scope tally.Scope) *Handler {
-	return &Handler{ctrl: ctrl, scope: scope.Tagged(map[string]string{"component": "handler"})}
+	return &Handler{
+		ctrl:               ctrl,
+		getMetadataMetrics: newEndpointMetrics(scope, "GetMetadata"),
+		putMetadataMetrics: newEndpointMetrics(scope, "PutMetadata"),
+	}
+}
+
+// EndpointMetrics defines metrics for an endpoint.
+type EndpointMetrics struct {
+	calls                 tally.Counter
+	invalidArgumentErrors tally.Counter
+	notFoundErrors        tally.Counter
+	internalErrors        tally.Counter
+	successes             tally.Counter
+}
+
+func newEndpointMetrics(scope tally.Scope, endpoint string) *EndpointMetrics {
+	scope = scope.Tagged(map[string]string{"component": "handler", "endpoint": endpoint})
+	return &EndpointMetrics{
+		calls: scope.Counter("call"),
+		invalidArgumentErrors: scope.Tagged(map[string]string{
+			"error": "invalid_argument"},
+		).Counter("error"),
+		notFoundErrors: scope.Tagged(map[string]string{
+			"error": "not_found",
+		}).Counter("error"),
+		internalErrors: scope.Tagged(map[string]string{
+			"error": "internal",
+		}).Counter("error"),
+		successes: scope.Counter("success"),
+	}
 }
 
 // GetMetadata returns movie metadata.
 func (h *Handler) GetMetadata(ctx context.Context, req *gen.GetMetadataRequest) (*gen.GetMetadataResponse, error) {
-	scope := h.scope.Tagged(map[string]string{"endpoint": "GetMetadata"})
-	scope.Counter("call").Inc(1)
+	h.getMetadataMetrics.calls.Inc(1)
 	if req == nil || req.MovieId == "" {
-		scope.Tagged(map[string]string{"error": "invalid_argument"}).Counter("error").Inc(1)
+		h.getMetadataMetrics.invalidArgumentErrors.Inc(1)
 		return nil, status.Errorf(codes.InvalidArgument, "nil req or empty id")
 	}
 	m, err := h.ctrl.Get(ctx, req.MovieId)
 	if err != nil && errors.Is(err, metadata.ErrNotFound) {
-		scope.Tagged(map[string]string{"error": "not_found"}).Counter("error").Inc(1)
+		h.getMetadataMetrics.notFoundErrors.Inc(1)
 		return nil, status.Errorf(codes.NotFound, err.Error())
 	} else if err != nil {
-		scope.Tagged(map[string]string{"error": "internal"}).Counter("error").Inc(1)
+		h.getMetadataMetrics.internalErrors.Inc(1)
 		return nil, status.Errorf(codes.Internal, err.Error())
 	}
-	scope.Counter("success").Inc(1)
+	h.getMetadataMetrics.successes.Inc(1)
 	return &gen.GetMetadataResponse{Metadata: model.MetadataToProto(m)}, nil
 }
 
 // PutMetadata puts movie metadata to repository.
 func (h *Handler) PutMetadata(ctx context.Context, req *gen.PutMetadataRequest) (*gen.PutMetadataResponse, error) {
-	scope := h.scope.Tagged(map[string]string{"endpoint": "PutMetadata"})
-	scope.Counter("call").Inc(1)
+	h.putMetadataMetrics.calls.Inc(1)
 	if req == nil || req.Metadata == nil {
-		scope.Tagged(map[string]string{"error": "invalid_argument"}).Counter("error").Inc(1)
+		h.putMetadataMetrics.invalidArgumentErrors.Inc(1)
 		return nil, status.Errorf(codes.InvalidArgument, "nil req or metadata")
 	}
 	if err := h.ctrl.Put(ctx, model.MetadataFromProto(req.Metadata)); err != nil {
-		scope.Tagged(map[string]string{"error": "internal"}).Counter("error").Inc(1)
+		h.putMetadataMetrics.internalErrors.Inc(1)
 		return nil, status.Errorf(codes.Internal, err.Error())
 	}
-	scope.Counter("success").Inc(1)
+	h.putMetadataMetrics.successes.Inc(1)
 	return &gen.PutMetadataResponse{}, nil
 }
