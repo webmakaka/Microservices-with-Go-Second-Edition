@@ -9,16 +9,7 @@ The expert's guide to building secure, scalable, and reliable microservices with
 <p align="center">
 Alexander Shuiskov</p>
 
-<p align="center">
-   <a href="" alt="Discord" title="Learn more on the Discord server"><img width="32px" src="https://cliply.co/wp-content/uploads/2021/08/372108630_DISCORD_LOGO_400.gif"/></a>
-  &#8287;&#8287;&#8287;&#8287;&#8287;
-  <a href="https://packt.link/free-ebook/9781836207337"><img width="32px" alt="Free PDF" title="Free PDF" src="https://cdn-icons-png.flaticon.com/512/4726/4726010.png"/></a>
- &#8287;&#8287;&#8287;&#8287;&#8287;
-  <a href="https://packt.link/gbp/9781836207337"><img width="32px" alt="Graphic Bundle" title="Graphic Bundle" src="https://cdn-icons-png.flaticon.com/512/2659/2659360.png"/></a>
-  &#8287;&#8287;&#8287;&#8287;&#8287;
-   <a href="https://www.amazon.com/Microservices-Go-building-scalable-microservices/dp/1836207336"><img width="32px" alt="Amazon" title="Get your copy" src="https://cdn-icons-png.flaticon.com/512/15466/15466027.png"/></a>
-  &#8287;&#8287;&#8287;&#8287;&#8287;
-</p>
+
 <details open> 
   <summary><h2>About the book</summary>
 <a href="https://www.packtpub.com/product/unity-cookbook-fifth-edition/9781805123026">
@@ -50,7 +41,7 @@ By the end of this book, you'll have gained hands-on experience in developing sc
 
 <details open> 
   <summary><h2>Chapters</summary>
-     <img src="https://cliply.co/wp-content/uploads/2020/02/372002150_DOCUMENTS_400px.gif" alt="Unity Cookbook, Fifth Edition" height="556px" align="right">
+
 <ol>
 
   <li>Introduction to Microservices</li>
@@ -105,24 +96,3 @@ By the end of this book, you'll have gained hands-on experience in developing sc
 
   </details>
     
-
-
-<details> 
-  <summary><h2>Get to know Authors</h2></summary>
-
-_Alexander Shuiskov_ is an independent researcher and software expert specializing in distributed systems, microservices, and observability. He has worked at major tech companies, including Uber, Booking(dot)com and eBay, where he helped solve large-scale infrastructure challenges, as well as establish reliability and monitoring of thousands of microservices.
-
-
-
-</details>
-<details> 
-  <summary><h2>Other Related Books</h2></summary>
-<ul>
-
-  <li><a href="https://www.packtpub.com/en-us/product/go-programming---from-beginner-to-professional-second-edition/9781803243054">Go Programming - From Beginner to Professional, Second Edition</a></li>
-
-  <li><a href="https://www.packtpub.com/en-us/product/mastering-go-fourth-edition/9781805127147">Mastering Go, Fourth Edition</a></li>
- 
-</ul>
-
-</details>
