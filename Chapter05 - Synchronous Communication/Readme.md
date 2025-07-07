@@ -1,24 +1,27 @@
-# Chapter05 - Synchronous Communication
-
-<br/>
 
 ```
-$ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
-
-$ export PATH="$PATH:$(go env GOPATH)/bin"
+// grpc
+https://grpc.io/docs/protoc-installation/
 ```
 
-<br/>
-
 ```
-// grpcurl tool
+// grpcurl
 https://github.com/fullstorydev/grpcurl
+
+// Install
+$ curl -sSL "https://github.com/fullstorydev/grpcurl/releases/download/v1.8.6/grpcurl_1.8.6_linux_x86_64.tar.gz" | sudo tar -xz -C /usr/local/bin
 ```
 
 
 <br/>
 
+```
+$ cd /src
+$ protoc -I=api --go_out=. --go-grpc_out=. movie.proto
+```
+
+<br/>
 
 ```
-$ protoc -I=api --go_out=. --go-grpc_out=. movie.proto
+$ grpcurl -plaintext -d '{"record_id":"1", "record_type":"movie"}' localhost:8082 RatingService/GetAggregatedRating
 ```
