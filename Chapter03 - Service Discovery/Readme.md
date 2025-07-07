@@ -39,13 +39,14 @@ $ go run *.go
 http://localhost:8500/
 ```
 
-
+<br/>
 
 ```
-
 $ curl -v 'localhost:8083/movie?id=1'
 ```
 
+
+<br/>
 
 ```
 // movie service
