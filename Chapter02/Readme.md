@@ -1,5 +1,14 @@
 # Chapter02
 
+
+<br/>
+
+```
+• Metadata service: localhost:8081
+• Rating service: localhost:8082
+• Movie service: localhost:8083
+```
+
 <br/>
 
 ```
@@ -23,10 +32,7 @@ $ cd src/rating/cmd/
 $ go run *.go
 ```
 
-
-
 <br/>
-
 
 ```
 // metadata service
