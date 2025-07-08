@@ -1,55 +1,63 @@
-# Chapter06 - Asynchronous Communication
+# Chapter07 - Storing Service Data
 
 <br/>
 
 ```
-$ docker start dev-consul
-```
-
-<br/>
-
-```
-$ cd src/cmd/ratingproducer/
-$ docker-compose up -d
+$ docker run --name movieexample_db -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=movieexample -p 3306:3306 -d mysql:latest
 ```
 
 <br/>
 
 ```
-$ docker exec -it kafka /bin/bash
+$ cd src
 ```
 
 <br/>
 
 ```
-# cd /opt/kafka/bin
-
-# kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic ratings
-```
-
-<br/>
-
-+ New Terminal
-
-```
-$ cd /src/rating/cmd
-$ go run main.go
-```
-
-<br/>
-
-+ New Terminal
-
-```
-$ cd /src/cmd/ratingproducer
-$ go run main.go
-```
-
-<br/>
-
-```
-// Rating service
 // OK!
-Consumed a message: {{1 movie 105 5} test-provider put}
-Consumed a message: {{2 movie 105 4} test-provider put}
+$ docker exec -i movieexample_db mysql movieexample -h localhost -P 3306 --protocol=tcp -uroot -ppassword < schema/schema.sql
+```
+
+
+<br/>
+
+```
+// OK!
+$ docker exec -i movieexample_db mysql movieexample -h localhost -P 3306 --protocol=tcp -uroot -ppassword -e "SHOW tables"
+```
+
+<br/>
+
+```
+
+$ cd rating/cmd/
+$ go run *.go
+```
+
+
+<br/>
+
+
+```
+$ grpcurl -plaintext -d '{"record_id":"1", "record_type": "movie","user_id": "alex", "rating_value": 5}' localhost:8082 RatingService/PutRating
+```
+
+<br/>
+
+
+```
+// OK!
+$ grpcurl -plaintext -d '{"record_id":"1", "record_type": "movie"}' localhost:8082 RatingService/GetAggregatedRating
+```
+
+<br/>
+
+**response:**
+
+
+```
+{
+  "ratingValue": 5
+}
 ```
