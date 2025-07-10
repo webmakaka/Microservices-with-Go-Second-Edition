@@ -23,7 +23,6 @@ $ docker exec -it kafka /bin/bash
 
 ```
 # cd /opt/kafka/bin
-
 # kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic ratings
 ```
 
