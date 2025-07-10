@@ -14,9 +14,28 @@ $ eval $(minikube -p minikube docker-env)
 ```
 $ helm repo add hashicorp https://helm.releases.hashicorp.com
 
-$ helm install consul hashicorp/consul --set global.name=consul
---create-namespace --namespace consul
+// $ helm install consul hashicorp/consul --set global.name=consul --create-namespace --namespace consul
 
+$ helm pull hashicorp/consul --untar
+
+$ cd consul
+
+$ helm install consul . --set global.name=consul --create-namespace --namespace consul
+```
+
+<br/>
+
+```
+$ kubectl get pods -n consul
+NAME                                          READY   STATUS    RESTARTS   AGE
+consul-connect-injector-78fdcf77d6-zzmnv      1/1     Running   0          45s
+consul-server-0                               1/1     Running   0          44s
+consul-webhook-cert-manager-d8c8f756b-kcmd5   1/1     Running   0          45s
+```
+
+<br/>
+
+```
 $ kubectl port-forward service/consul-server 8500:8500 -n consul
 ```
 
