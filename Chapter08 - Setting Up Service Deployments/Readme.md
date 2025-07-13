@@ -12,14 +12,17 @@ $ eval $(minikube -p minikube docker-env)
 
 
 ```
-$ helm repo add hashicorp https://helm.releases.hashicorp.com
+// $ helm repo add hashicorp https://helm.releases.hashicorp.com
 
+// FAIL!
 // $ helm install consul hashicorp/consul --set global.name=consul --create-namespace --namespace consul
+// $ helm pull hashicorp/consul --untar
+```
 
-$ helm pull hashicorp/consul --untar
+<br/>
 
+```
 $ cd consul
-
 $ helm install consul . --set global.name=consul --create-namespace --namespace consul
 ```
 
@@ -35,17 +38,10 @@ consul-webhook-cert-manager-d8c8f756b-kcmd5   1/1     Running   0          45s
 
 <br/>
 
-```
-$ kubectl port-forward service/consul-server 8500:8500 -n consul
-```
-
-
-<br/>
-
 
 ```
 $ src/metadata
-$ GOOS=linux go build -o main cmd/*.go
+$ GOOS=linux CGO_ENABLED=0 go build -o main cmd/*.go
 $ docker build -t metadata:latest .
 $ kubectl apply -f kubernetes-deployment.yaml
 ```
@@ -56,7 +52,7 @@ $ kubectl apply -f kubernetes-deployment.yaml
 
 ```
 $ src/rating
-$ GOOS=linux go build -o main cmd/*.go
+$ GOOS=linux CGO_ENABLED=0 go build -o main cmd/*.go
 $ docker build -t rating:latest .
 $ kubectl apply -f kubernetes-deployment.yaml
 ```
@@ -67,24 +63,49 @@ $ kubectl apply -f kubernetes-deployment.yaml
 
 ```
 $ src/movie
-$ GOOS=linux go build -o main cmd/*.go
+$ GOOS=linux CGO_ENABLED=0 go build -o main cmd/*.go
 $ docker build -t movie:latest .
 $ kubectl apply -f kubernetes-deployment.yaml
 ```
 
-<br/>
-
-```
-$ kubectl port-forward <POD_ID> 8081:8081
-$ kubectl port-forward <POD_ID> 8082:8082
-$ kubectl port-forward <POD_ID> 8083:8083
-```
-
 
 <br/>
 
 ```
+$ kubectl port-forward service/consul-server 8500:8500 -n consul
+```
+
+
+```
+// OK!
+http://localhost:8500/ui/dc1/services
+```
+
+<br/>
+
+```
+$ kubectl port-forward metadata 8081:8081
+$ kubectl port-forward rating 8082:8082
+$ kubectl port-forward movie 8083:8083
+```
+
+
+<br/>
+
+```
+// OK!
 $ grpcurl -plaintext -d '{"record_id":"1", "record_type":"movie", "user_id": "alex", "rating_value": 5}' localhost:8082 RatingService/PutRating
 
+// OK!
 $ grpcurl -plaintext -d '{"record_id":"1", "record_type":"movie"}' localhost:8082 RatingService/GetAggregatedRating
+```
+
+<br/>
+
+**response**
+
+```
+{
+  "ratingValue": 5
+}
 ```
