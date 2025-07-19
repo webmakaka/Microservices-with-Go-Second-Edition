@@ -17,7 +17,6 @@ $ docker run -d --name jaeger \
 jaegertracing/all-in-one:1.37
 ```
 
-
 <br/>
 
 ```
