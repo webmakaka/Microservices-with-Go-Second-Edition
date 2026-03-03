@@ -14,6 +14,9 @@ $ docker run -d -p 8500:8500 -p 8600:8600/udp --name=dev-consul hashicorp/consul
 ```
 $ cd src/metadata/cmd/
 $ go run *.go
+
++1 instance
+$ go run *.go --port 8084
 ```
 
 <br/>
