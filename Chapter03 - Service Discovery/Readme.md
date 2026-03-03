@@ -53,5 +53,15 @@ $ curl -v 'localhost:8083/movie?id=1'
 
 ```
 // movie service
-2025/07/04 11:57:12 Calling metadata service. Request: GET http://localhost:8081/metadata
+2026/03/03 19:35:10 Calling metadata service. Request: GET http://localhost:8084/metadata
+2026/03/03 19:35:18 Calling metadata service. Request: GET http://localhost:8081/metadata
+2026/03/03 19:35:22 Calling metadata service. Request: GET http://localhost:8081/metadata
+2026/03/03 19:35:24 Calling metadata service. Request: GET http://localhost:8081/metadata
+2026/03/03 19:35:25 Calling metadata service. Request: GET http://localhost:8084/metadata
+2026/03/03 19:35:25 Calling metadata service. Request: GET http://localhost:8084/metadata
+2026/03/03 19:35:26 Calling metadata service. Request: GET http://localhost:8081/metadata
+2026/03/03 19:35:27 Calling metadata service. Request: GET http://localhost:8084/metadata
+2026/03/03 19:35:27 Calling metadata service. Request: GET http://localhost:8084/metadata
+2026/03/03 19:35:28 Calling metadata service. Request: GET http://localhost:8081/metadata
+2026/03/03 19:35:28 Calling metadata service. Request: GET http://localhost:8084/metadata
 ```
