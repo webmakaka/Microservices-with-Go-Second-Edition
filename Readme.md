@@ -44,11 +44,11 @@ By the end of this book, you'll have gained hands-on experience in developing sc
 
 <ol>
 
-  <li>Introduction to Microservices</li>
+  <li>✅ Introduction to Microservices</li>
 
-  <li>Scaffolding Go Microservices</li>
+  <li>✅ Scaffolding Go Microservices</li>
 
-  <li>Service Discovery</li>
+  <li>✅ Service Discovery</li>
 
   <li>Serialization</li>
 
