@@ -5,7 +5,7 @@ it, and later deconstruct it.
 
 Serialization has two primary use cases:
 
-• Transferring data between services, acting as a common format between them
+• Transferring data between services, acting as a common format between them  
 • Encoding and decoding arbitrary data for storage, allowing you to store complex data
 structures as byte arrays or regular strings
 
