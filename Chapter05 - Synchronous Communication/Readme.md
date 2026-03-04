@@ -24,7 +24,7 @@ $ curl -sSL "https://github.com/fullstorydev/grpcurl/releases/download/v1.9.3/gr
 
 ```
 // Made checkout . because of error
-$ cd /src
+$ cd src
 $ protoc -I=api --go_out=. --go-grpc_out=. movie.proto
 ```
 
@@ -37,7 +37,7 @@ $ docker start dev-consul
 <br/>
 
 ```
-$ docker start dev-consul
+RUN-> all microservices
 ```
 
 <br/>
