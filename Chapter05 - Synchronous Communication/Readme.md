@@ -28,11 +28,15 @@ $ cd /src
 $ protoc -I=api --go_out=. --go-grpc_out=. movie.proto
 ```
 
+<br/>
+
+```
+$ docker start dev-consul
+```
 
 <br/>
 
 ```
-RUN-> all microservices
 $ docker start dev-consul
 ```
 
