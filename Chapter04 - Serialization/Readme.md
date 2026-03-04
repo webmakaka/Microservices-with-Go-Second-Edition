@@ -30,3 +30,11 @@ $ protoc -I=api --go_out=. movie.proto
 ```
 $ go mod tidy
 ```
+
+
+<br/>
+
+
+```
+$ go test -bench=.
+```
