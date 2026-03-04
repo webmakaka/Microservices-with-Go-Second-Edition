@@ -11,7 +11,7 @@ https://grpc.io/docs/protoc-installation/
 https://github.com/fullstorydev/grpcurl
 
 // Install
-$ curl -sSL "https://github.com/fullstorydev/grpcurl/releases/download/v1.8.6/grpcurl_1.8.6_linux_x86_64.tar.gz" | sudo tar -xz -C /usr/local/bin
+$ curl -sSL "https://github.com/fullstorydev/grpcurl/releases/download/v1.9.3/grpcurl_1.9.3_linux_x86_64.tar.gz" | sudo tar -xz -C /usr/local/bin
 ```
 
 
