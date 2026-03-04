@@ -51,6 +51,7 @@ $ grpcurl -plaintext -d '{"record_id":"1", "record_type":"movie"}' localhost:808
 **response**
 
 ```
+// OK!
 ERROR:
   Code: NotFound
   Message: ratings not found for a record
