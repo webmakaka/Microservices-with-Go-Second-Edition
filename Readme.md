@@ -52,7 +52,7 @@ By the end of this book, you'll have gained hands-on experience in developing sc
 
   <li>✅ Serialization</li>
 
-  <li>Synchronous Communication</li>
+  <li>✅ Synchronous Communication</li>
 
   <li>Asynchronous Communication</li>
 
