@@ -50,7 +50,7 @@ By the end of this book, you'll have gained hands-on experience in developing sc
 
   <li>✅ Service Discovery</li>
 
-  <li>Serialization</li>
+  <li>✅ Serialization</li>
 
   <li>Synchronous Communication</li>
 
