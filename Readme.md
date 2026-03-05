@@ -58,7 +58,7 @@ By the end of this book, you'll have gained hands-on experience in developing sc
 
   <li>✅ Storing Service Data (MySQL)</li>
 
-  <li>Setting Up Service Deployments (Kubernetes)</li>
+  <li>✅ Setting Up Service Deployments (Kubernetes)</li>
 
   <li>Unit and Integration Testing</li>
 
