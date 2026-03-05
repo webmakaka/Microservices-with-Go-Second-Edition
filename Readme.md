@@ -48,17 +48,17 @@ By the end of this book, you'll have gained hands-on experience in developing sc
 
   <li>✅ Scaffolding Go Microservices</li>
 
-  <li>✅ Service Discovery</li>
+  <li>✅ Service Discovery (Consul)</li>
 
   <li>✅ Serialization</li>
 
-  <li>✅ Synchronous Communication</li>
+  <li>✅ Synchronous Communication (gRPC)</li>
 
-  <li>✅ Asynchronous Communication</li>
+  <li>✅ Asynchronous Communication (Kafka)</li>
 
-  <li>Storing Service Data</li>
+  <li>✅ Storing Service Data (MySQL)</li>
 
-  <li>Setting Up Service Deployments</li>
+  <li>Setting Up Service Deployments (Kubernetes)</li>
 
   <li>Unit and Integration Testing</li>
 
