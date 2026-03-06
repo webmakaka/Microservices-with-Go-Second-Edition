@@ -62,3 +62,13 @@ BenchmarkSerializeToProto-4   	 4292536	       315.5 ns/op
 PASS
 ok  	movieexample.com/cmd/sizecompare	4.743s
 ```
+
+
+<br/><br/>
+
+---
+
+<br/>
+
+**Marley**  
+<a href="https://k8s.ru/">Предложить инженеру работу / подработку на проекте с kubernetes, microservices, golang</a>
