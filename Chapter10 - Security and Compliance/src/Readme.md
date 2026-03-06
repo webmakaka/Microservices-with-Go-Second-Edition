@@ -49,23 +49,68 @@ $ go run ../cmd/*.go
 $ cd src/metadata/configs
 ```
 
+<br/>
+
 ```
-// FAIL!
-$ grpcurl -cacert ca-cert.pem -d '{"movie_id":"1"}' localhost:8081 MetadataService/GetMetadata
-Failed to dial target host "localhost:8081": context deadline exceeded
+// OK!
+$ grpcurl -cacert ca-cert.pem -cert metadata-cert.pem -key metadata-key.pem \
+  -d '{
+    "metadata": {
+      "id": "alien-3",
+      "title": "Alien 3",
+      "description": "Ellen Ripley discovers that an unwanted guest came along for the ride.",
+      "director": "David Fincher"
+    }
+  }' localhost:8081 MetadataService/PutMetadata
 ```
 
 <br/>
 
 ```
-$ cd movie/configs/
-$ go run ../cmd/*.go
+// OK!
+$ grpcurl -cacert ca-cert.pem \
+  -cert metadata-cert.pem \
+  -key metadata-key.pem \
+  -d '{"movie_id":"alien-3"}' \
+  localhost:8081 MetadataService/GetMetadata
 ```
+
+
+**response:**
+
+<br/>
+
+```
+{
+  "metadata": {
+    "id": "alien-3",
+    "title": "Alien 3",
+    "description": "Ellen Ripley discovers that an unwanted guest came along for the ride.",
+    "director": "David Fincher"
+  }
+}
+```
+
+<br/>
+
+**Need to update movie/cmd/main.go**
 
 ```
 // FAIL!
 $ grpcurl -cacert ca-cert.pem -d '{"movie_id":"1"}' localhost:8083 MovieService/GetMovieDetails
+Failed to dial target host "localhost:8083": tls: first record does not look like a TLS handshake
 ```
+
+```
+// FAIL!
+$ grpcurl -cacert ca-cert.pem \
+  -cert metadata-cert.pem \
+  -key metadata-key.pem \
+  -d '{"movie_id":"alien-3"}' \
+  localhost:8083 MovieService/GetMovieDetails
+Failed to dial target host "localhost:8083": tls: first record does not look like a TLS handshake
+```
+
 
 <br/>
 
