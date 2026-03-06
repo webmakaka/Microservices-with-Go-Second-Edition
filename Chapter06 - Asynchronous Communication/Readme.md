@@ -55,3 +55,13 @@ $ go run main.go
 Consumed a message: {{1 movie 105 5} test-provider put}
 Consumed a message: {{2 movie 105 4} test-provider put}
 ```
+
+
+<br/><br/>
+
+---
+
+<br/>
+
+**Marley**  
+<a href="https://k8s.ru/">Предложить инженеру работу / подработку на проекте с kubernetes, microservices, golang</a>
