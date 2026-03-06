@@ -1,5 +1,20 @@
 # Chapter 10 - Security and Compliance
 
+<br/>
+
+```
+$ docker start dev-consul
+```
+
+<br/>
+
+```
+$ sudo vi /etc/hosts
+127.0.0.1 consul-server.consul.svc.cluster.local
+```
+
+<br/>
+
 ```
 // It makes server.key and server.crt in the current location
 $ openssl req -x509 -nodes -newkey rsa:4096 \
@@ -12,6 +27,7 @@ Move the files that were generated in the previous step into the configs directo
 of our microservices.
 
 ```
+$ cd src/metadata/configs
 $ go run ../cmd/*.go
 ```
 
