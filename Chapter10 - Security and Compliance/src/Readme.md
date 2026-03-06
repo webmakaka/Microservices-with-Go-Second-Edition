@@ -150,6 +150,15 @@ $ gosec ./...
 $ gosec -ai-api-provider="gemini" -ai-api-key="your_key" ./...
 ```
 
+<br/>
+
+## Use automated vulnerability scanning
+
+```
+$ go install golang.org/x/vuln/cmd/govulncheck@latest
+$ govulncheck ./...
+```
+
 <br/><br/>
 
 ---
