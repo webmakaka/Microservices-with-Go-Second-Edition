@@ -69,3 +69,13 @@ ok  	movieexample.com/metadata/internal/controller/metadata	0.005s	coverage: 83.
 ```
 $ go test -cover ./...
 ```
+
+
+<br/><br/>
+
+---
+
+<br/>
+
+**Marley**  
+<a href="https://k8s.ru/">Предложить инженеру работу / подработку на проекте с kubernetes, microservices, golang</a>
