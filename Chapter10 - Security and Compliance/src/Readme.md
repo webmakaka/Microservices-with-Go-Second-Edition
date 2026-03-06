@@ -63,8 +63,14 @@ $ go run ../cmd/*.go
 ```
 
 ```
+// FAIL!
 $ grpcurl -cacert ca-cert.pem -d '{"movie_id":"1"}' localhost:8083 MovieService/GetMovieDetails
 ```
+
+<br/>
+
+## Implementing authentication and access control with JWT
+
 
 <br/><br/>
 
