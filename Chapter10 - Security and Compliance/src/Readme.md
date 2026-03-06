@@ -1,6 +1,7 @@
 # Chapter 10 - Security and Compliance
 
 ```
+// It makes server.key and server.crt in the current location
 $ openssl req -x509 -nodes -newkey rsa:4096 \
   -keyout server.key -out server.crt -days 365 -nodes \
   -subj "/C=US/ST=State/L=City/O=Organization/OU=Department/CN=localhost" \
