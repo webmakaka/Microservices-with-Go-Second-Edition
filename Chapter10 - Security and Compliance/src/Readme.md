@@ -16,6 +16,12 @@ $ sudo vi /etc/hosts
 <br/>
 
 ```
+$ cd src/metadata/configs
+```
+
+<br/>
+
+```
 // It makes server.key and server.crt in the current location
 $ openssl req -x509 -nodes -newkey rsa:4096 \
   -keyout server.key -out server.crt -days 365 -nodes \
@@ -26,14 +32,33 @@ $ openssl req -x509 -nodes -newkey rsa:4096 \
 Move the files that were generated in the previous step into the configs directory of each
 of our microservices.
 
+
 ```
-$ cd src/metadata/configs
+$ src/rating/configs
+$ go run ../cmd/*.go
+```
+
+```
+$ cd metadata/configs/
+$ go run ../cmd/*.go
+```
+
+```
+$ cd src/movie/configs/
 $ go run ../cmd/*.go
 ```
 
 
+<br/>
+
 ```
+$ cd src/metadata/configs
+```
+
+```
+// FAIL!
 $ grpcurl -cacert server.crt -d '{"movie_id":"1"}' localhost:8081 MetadataService/GetMetadata
+Failed to dial target host "localhost:8081": context deadline exceeded
 ```
 
 <br/><br/>
