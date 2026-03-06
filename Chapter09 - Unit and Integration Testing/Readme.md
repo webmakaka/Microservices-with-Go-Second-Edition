@@ -1,4 +1,4 @@
-# Chapter09 - Unit and Integration Testing
+# Chapter 09 - Unit and Integration Testing
 
 ```
 $ go test
