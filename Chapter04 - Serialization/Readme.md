@@ -1,4 +1,4 @@
-# Chapter04 - Serialization
+# Chapter 04 - Serialization
 
 Serialization is the process of converting data into a format that allows you to transfer it, store
 it, and later deconstruct it.
