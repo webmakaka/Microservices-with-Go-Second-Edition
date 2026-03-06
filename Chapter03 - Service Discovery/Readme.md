@@ -65,3 +65,13 @@ $ curl -v 'localhost:8083/movie?id=1'
 2026/03/03 19:35:28 Calling metadata service. Request: GET http://localhost:8081/metadata
 2026/03/03 19:35:28 Calling metadata service. Request: GET http://localhost:8084/metadata
 ```
+
+
+<br/><br/>
+
+---
+
+<br/>
+
+**Marley**  
+<a href="https://k8s.ru/">Предложить инженеру работу / подработку на проекте с kubernetes, microservices, golang</a>
