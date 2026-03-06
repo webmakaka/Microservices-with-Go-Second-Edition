@@ -1,4 +1,4 @@
-# Chapter06 - Asynchronous Communication
+# Chapter 06 - Asynchronous Communication
 
 Asynchronous communication is communication between a sender and one or multiple receivers,
 where a sender does not necessarily expect an immediate response to their messages.
