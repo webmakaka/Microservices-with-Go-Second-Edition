@@ -1,4 +1,4 @@
-# Chapter08 - Setting Up Service Deployments
+# Chapter 08 - Setting Up Service Deployments
 
 <br/>
 
