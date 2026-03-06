@@ -65,6 +65,12 @@ $ grpcurl -cacert ca-cert.pem -d '{"movie_id":"1"}' localhost:8081 MetadataServi
 Failed to dial target host "localhost:8081": context deadline exceeded
 ```
 
+
+
+```
+$ grpcurl -cacert ca-cert.pem -d '{"movie_id":"1"}' localhost:8083 MovieService/GetMovieDetails
+```
+
 <br/><br/>
 
 ---
