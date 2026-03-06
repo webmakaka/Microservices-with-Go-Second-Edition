@@ -1,4 +1,4 @@
-# Chapter02 - Scaffolding a Go Microservice
+# Chapter 02 - Scaffolding a Go Microservice
 
 
 <br/>
