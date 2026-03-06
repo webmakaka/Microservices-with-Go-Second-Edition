@@ -114,8 +114,23 @@ Failed to dial target host "localhost:8083": tls: first record does not look lik
 
 <br/>
 
-## Implementing authentication and access control with JWT
+## [FAIL!] Implementing authentication and access control with JWT
 
+```
+$ protoc -I=api --go_out=. --go-grpc_out=. auth.proto
+```
+
+```
+$ go run *.go
+```
+
+```
+$ grpcurl -cacert server.crt -d '{"username": "user1", "password":"password"}' localhost:8084 AuthService/GetToken
+```
+
+```
+$ grpcurl -cacert server.crt -d '{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzIzNTUzMjIsInVzZXJuYW1lIjoidXNlcjEifQ.VXYnWw0oXQLG6qX2_dIV7qXEiuZILsENeFzPoLlzX0o"}' localhost:8084 AuthService/ValidateToken
+```
 
 <br/><br/>
 
