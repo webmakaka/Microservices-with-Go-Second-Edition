@@ -109,3 +109,13 @@ $ grpcurl -plaintext -d '{"record_id":"1", "record_type":"movie"}' localhost:808
   "ratingValue": 5
 }
 ```
+
+
+<br/><br/>
+
+---
+
+<br/>
+
+**Marley**  
+<a href="https://k8s.ru/">Предложить инженеру работу / подработку на проекте с kubernetes, microservices, golang</a>
