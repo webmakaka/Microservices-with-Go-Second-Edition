@@ -132,6 +132,24 @@ $ grpcurl -cacert server.crt -d '{"username": "user1", "password":"password"}' l
 $ grpcurl -cacert server.crt -d '{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzIzNTUzMjIsInVzZXJuYW1lIjoidXNlcjEifQ.VXYnWw0oXQLG6qX2_dIV7qXEiuZILsENeFzPoLlzX0o"}' localhost:8084 AuthService/ValidateToken
 ```
 
+<br/>
+
+## Using gosec to automate security analysis
+
+```
+$ go install github.com/securego/gosec/v2/cmd/gosec@latest
+```
+
+
+```
+$ gosec ./...
+```
+
+
+```
+$ gosec -ai-api-provider="gemini" -ai-api-key="your_key" ./...
+```
+
 <br/><br/>
 
 ---
