@@ -105,4 +105,4 @@ By the end of this book, you'll have gained hands-on experience in developing sc
 <br/>
 
 **Marley**  
-<a href="https://k8s.ru/">Предложить работу / подработку на проекте с kubernetes, microservices, golang</a>
+<a href="https://k8s.ru/">Предложить инженеру работу / подработку на проекте с kubernetes, microservices, golang</a>
