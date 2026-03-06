@@ -38,17 +38,7 @@ of our microservices.
 
 
 ```
-$ src/rating/configs
-$ go run ../cmd/*.go
-```
-
-```
 $ cd metadata/configs/
-$ go run ../cmd/*.go
-```
-
-```
-$ cd src/movie/configs/
 $ go run ../cmd/*.go
 ```
 
