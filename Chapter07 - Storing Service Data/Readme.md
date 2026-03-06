@@ -27,6 +27,12 @@ $ docker exec -i movieexample_db mysql movieexample -h localhost -P 3306 --proto
 $ docker exec -i movieexample_db mysql movieexample -h localhost -P 3306 --protocol=tcp -uroot -ppassword -e "SHOW tables"
 ```
 
+```
+Tables_in_movieexample
+movies
+ratings
+```
+
 <br/>
 
 ```
