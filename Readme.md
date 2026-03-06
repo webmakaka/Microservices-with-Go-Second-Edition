@@ -62,7 +62,7 @@ By the end of this book, you'll have gained hands-on experience in developing sc
 
   <li>✅ Unit and Integration Testing</li>
 
-  <li>Security and Compliance</li>
+  <li>🛠️ Security and Compliance</li>
 
   <li>Reliability Overview</li>
 
