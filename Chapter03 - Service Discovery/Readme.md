@@ -1,4 +1,4 @@
-# Chapter03 - Service Discovery
+# Chapter 03 - Service Discovery
 
 <br/>
 
