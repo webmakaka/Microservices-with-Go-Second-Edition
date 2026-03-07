@@ -13,6 +13,13 @@ https://opentelemetry.io/docs/languages/go/
 
 https://prometheus.io/docs/guides/go-application
 
+
+<br/>
+
+```
+$ docker start dev-consul
+```
+
 <br/>
 
 ```
@@ -34,17 +41,15 @@ $ docker run -d --name jaeger \
 <br/>
 
 ```
-$ cd src/metadata/cmd/
-$ cp ../configs/default.yaml .
-$ vi default.yaml
+// OK!
+http://localhost:16686/
 ```
 
 <br/>
 
-
 ```
- consul:
-    address: http://localhost:8500
+$ cd src/metadata/cmd/
+$ cp ../configs/default.yaml .
 ```
 
 <br/>
@@ -52,9 +57,6 @@ $ vi default.yaml
 ```
 $ go run *.go
 ```
-
-
-
 
 <br/>
 
@@ -74,21 +76,11 @@ $ cp ../configs/default.yaml .
 $ go run *.go
 ```
 
-
 <br/>
-
 
 ```
 $ grpcurl -plaintext -d '{"movie_id":"1"}' localhost:8083 MovieService/GetMovieDetails
 ```
-
-<br/>
-
-```
-// OK!
-http://localhost:16686/
-```
-
 
 <br/>
 
