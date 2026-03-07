@@ -63,20 +63,23 @@ By the end of this book, you'll have gained hands-on experience in developing sc
   <li>✅ Unit and Integration Testing</li>
 
   <li>🛠️ Security and Compliance</li>
+ </ol> 
 
-  <li>Reliability Overview</li>
+Part 3: Maintenance
 
-  <li>Collecting Service Telemetry Data</li>
+<ul>
+  <li>11. Reliability Overview</li>
+  <li>12. Collecting Service Telemetry Data</li>
+  <li>13. Setting Up Service Alerting</li>
+  <li>14. Performance Monitoring</li>
+<ul>
 
-  <li>Setting Up Service Alerting</li>
+Part 4: Advanced Topics 
 
-  <li>Performance Monitoring</li>
-
+<ul>
   <li>Implementing Distributed System Scenarios</li>
-
   <li>Advanced Topics</li>
-
-</ol>
+</ul>
 
 </details>
 
