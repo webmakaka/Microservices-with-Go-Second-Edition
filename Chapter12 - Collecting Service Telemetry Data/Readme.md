@@ -1,5 +1,15 @@
 # Chapter12 - Collecting Service Telemetry Data
 
+**Telemetry data:**
+
+<ul>
+    <li>Logs</li>
+    <li>Metrics</li>
+    <li>Traces</li>
+    <li>Performance profiles</li>
+</ul>
+
+<br/>
 
 ```
 $ docker run -d --name jaeger \
