@@ -9,6 +9,8 @@
     <li>Performance profiles</li>
 </ul>
 
+https://opentelemetry.io/docs/languages/go/
+
 <br/>
 
 ```
