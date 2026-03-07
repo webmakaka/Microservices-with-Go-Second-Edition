@@ -11,6 +11,8 @@
 
 https://opentelemetry.io/docs/languages/go/
 
+https://prometheus.io/docs/guides/go-application
+
 <br/>
 
 ```
