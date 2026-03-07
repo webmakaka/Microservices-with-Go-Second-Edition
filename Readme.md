@@ -59,7 +59,7 @@ Part 3: Maintenance
 
 <ol start="11">
   <li>📖 Reliability Overview</li>
-  <li>Collecting Service Telemetry Data</li>
+  <li>Collecting Service Telemetry Data (Jaeger)</li>
   <li>Setting Up Service Alerting</li>
   <li>Performance Monitoring</li>
 </ol>
