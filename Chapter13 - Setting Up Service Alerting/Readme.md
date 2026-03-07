@@ -45,3 +45,13 @@ $ docker run -p 9093:9093 -v ./configs:/etc/alertmanager prom/alertmanager --con
 <br/>
 
 Something wrong for me!
+
+
+<br/><br/>
+
+---
+
+<br/>
+
+**Marley**  
+<a href="https://k8s.ru/">Предложить инженеру работу / подработку на проекте с kubernetes, microservices, golang</a>
