@@ -30,7 +30,7 @@ By the end of this book, you'll have gained hands-on experience in developing sc
   <summary><h2>Chapters</summary>
 
 <ol>
-  <li>✅ Introduction to Microservices</li>
+  <li>📖 Introduction to Microservices</li>
 </ol> 
 
 Part 2: Foundation
@@ -58,7 +58,7 @@ Part 2: Foundation
 Part 3: Maintenance
 
 <ol start="11">
-  <li>Reliability Overview</li>
+  <li>📖 Reliability Overview</li>
   <li>Collecting Service Telemetry Data</li>
   <li>Setting Up Service Alerting</li>
   <li>Performance Monitoring</li>
