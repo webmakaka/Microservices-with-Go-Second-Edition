@@ -1,4 +1,4 @@
-# Chapter13 - Setting Up Service Alerting
+# Chapter 13 - Setting Up Service Alerting
 
 
 <br/>
