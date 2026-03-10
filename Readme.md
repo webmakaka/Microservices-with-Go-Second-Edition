@@ -60,7 +60,7 @@ Part 3: Maintenance
 <ol start="11">
   <li>📖 Reliability Overview</li>
   <li>✅ Collecting Service Telemetry Data (Jaeger)</li>
-  <li>Setting Up Service Alerting (Prometheus)</li>
+  <li>❌ Setting Up Service Alerting (Prometheus)</li>
   <li>Performance Monitoring (Grafana)</li>
 </ol>
 
