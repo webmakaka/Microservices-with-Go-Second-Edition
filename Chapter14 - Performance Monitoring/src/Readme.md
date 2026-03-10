@@ -16,7 +16,10 @@ Prometheus server URL: http://host.docker.internal:9090
 Save and test
 
 
-Dashboards page -> Create dashboard -> Add visualization
+Dashboards page -> Create dashboard -> Add visualization -> Prometheus data source -> Metric field -> process_open_fds -> Run queries button -> Save dashboard
+
+same: go_gc_duration_seconds
+
 
 <br/><br/>
 
