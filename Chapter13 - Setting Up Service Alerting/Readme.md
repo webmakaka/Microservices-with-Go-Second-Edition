@@ -18,6 +18,7 @@ $ docker start jaeger
 ```
 $ cd src
 $ docker run \
+  --add-host host.docker.internal:host-gateway \
   -p 9090:9090 \
   -v ./configs:/etc/prometheus \
   prom/prometheus
@@ -58,7 +59,11 @@ Execute
 
 ```
 $ cd src
-$ docker run -p 9093:9093 -v ./configs:/etc/alertmanager prom/alertmanager --config.file=/etc/alertmanager/alertmanager.yml
+$ docker run \
+  --add-host host.docker.internal:host-gateway \
+  -p 9093:9093 \
+  -v ./configs:/etc/alertmanager prom/alertmanager \
+  --config.file=/etc/alertmanager/alertmanager.yml
 ```
 
 ```
