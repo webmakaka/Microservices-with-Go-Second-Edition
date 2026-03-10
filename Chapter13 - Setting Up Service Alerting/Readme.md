@@ -1,10 +1,20 @@
 # Chapter 13 - Setting Up Service Alerting
 
+<br/>
+
+https://sre.google/sre-book/practical-alerting/
+
+
+<br/>
+
+Run all micros
 
 <br/>
 
 ```
+// http://localhost:8500/
 $ docker start dev-consul
+
 $ docker start jaeger
 ```
 
@@ -42,7 +52,11 @@ $ cd src
 $ docker run -p 9093:9093 -v ./configs:/etc/alertmanager prom/alertmanager --config.file=/etc/alertmanager/alertmanager.yml
 ```
 
-<br/>
+```
+http://localhost:9093/metrics
+http://localhost:9093/#/alerts
+```
+
 
 Something wrong for me!
 
