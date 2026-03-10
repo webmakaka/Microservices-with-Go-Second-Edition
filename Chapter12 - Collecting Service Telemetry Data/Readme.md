@@ -1,4 +1,4 @@
-# Chapter12 - Collecting Service Telemetry Data
+# Chapter 12 - Collecting Service Telemetry Data
 
 **Telemetry data:**
 
