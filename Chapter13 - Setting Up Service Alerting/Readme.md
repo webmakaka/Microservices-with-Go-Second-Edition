@@ -4,11 +4,6 @@
 
 https://sre.google/sre-book/practical-alerting/
 
-
-<br/>
-
-Run all micros
-
 <br/>
 
 ```
@@ -28,6 +23,20 @@ $ docker run \
   prom/prometheus
 ```
 
+<br/>
+
+
+<br/>
+
+Run all micros
+
+```
+// OK!
+http://localhost:9091/metrics
+
+// OK!
+http://localhost:9093/metrics
+```
 
 <br/>
 
@@ -53,7 +62,6 @@ $ docker run -p 9093:9093 -v ./configs:/etc/alertmanager prom/alertmanager --con
 ```
 
 ```
-http://localhost:9093/metrics
 http://localhost:9093/#/alerts
 ```
 
