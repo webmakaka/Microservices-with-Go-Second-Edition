@@ -11,7 +11,7 @@ alerting:
     api_version: v2
     static_configs:
     - targets:
-      - host.docker.internal:9093      
+      - host.docker.internal:9093
 rule_files:
 - alerts.rules
 scrape_configs:
@@ -26,15 +26,15 @@ scrape_configs:
   static_configs:
   - targets:  
     - localhost:9090
-  - targets:    
-    - host.docker.internal:8091
+  - targets:
+    - host.docker.internal:9091
     labels:
       service: metadata
-  - targets:    
-    - host.docker.internal:8092
+  - targets:
+    - host.docker.internal:9092
     labels:
       service: rating
-  - targets:    
-    - host.docker.internal:8093
+  - targets:
+    - host.docker.internal:9093
     labels:
       service: movie
