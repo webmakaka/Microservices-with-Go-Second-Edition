@@ -67,7 +67,7 @@ Part 3: Maintenance
 Part 4: Advanced Topics 
 
 <ol start="15">
-  <li>❌ Implementing Distributed System Scenarios</li>
+  <li>📖 Implementing Distributed System Scenarios</li>
   <li>❌ Advanced Topics</li>
 </ol>
 
