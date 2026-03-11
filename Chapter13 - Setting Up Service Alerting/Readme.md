@@ -34,9 +34,6 @@ Run all micros
 ```
 // OK!
 http://localhost:9091/metrics
-
-// OK!
-http://localhost:9093/metrics
 ```
 
 <br/>
@@ -64,6 +61,11 @@ $ docker run \
   -p 9093:9093 \
   -v ./configs:/etc/alertmanager prom/alertmanager \
   --config.file=/etc/alertmanager/alertmanager.yml
+```
+
+```
+// OK!
+http://localhost:9093/metrics
 ```
 
 ```
