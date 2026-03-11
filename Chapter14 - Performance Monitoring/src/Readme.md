@@ -18,8 +18,56 @@ Save and test
 
 Dashboards page -> Create dashboard -> Add visualization -> Prometheus data source -> Metric field -> process_open_fds -> Run queries button -> Save dashboard
 
-same: go_gc_duration_seconds
+same:  Metric: go_gc_duration_seconds
 
+
+```
+$ grpcurl -plaintext -d '{}' localhost:8081 MetadataService/GetMetadata
+$ grpcurl -plaintext -d '{"movie_id": "0"}' localhost:8081 MetadataService/GetMetadata
+```
+
+http://localhost:9090
+
+```
+>_ call
+```
+
+Metric: call
+
+<br/>
+
+## Profiling Go services
+
+<br/>
+
+### Profiling CPU usage using the pprof tool
+
+https://graphviz.org/
+
+
+```
+$ go run *.go --simulatecpuload
+```
+
+
+```
+$ go tool pprof http://localhost:6060/debug/pprof/profile?seconds=5
+
+$ go tool pprof -raw -output=cpu.prof 'http://localhost:6060/debug/pprof/profile?seconds=10'
+```
+
+
+```
+$ perl stackcollapse-go.pl cpu.prof | perl flamegraph.pl > flame.svg
+```
+
+<br/>
+
+### Profiling heap memory usage using the pprof tool
+
+```
+$ go tool pprof http://localhost:6060/debug/pprof/heap
+```
 
 <br/><br/>
 
