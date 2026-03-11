@@ -75,8 +75,6 @@ http://localhost:9093/#/alerts
 ```
 
 
-Something wrong for me!
-
 
 <br/><br/>
 
