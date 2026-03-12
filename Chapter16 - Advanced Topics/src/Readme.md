@@ -31,3 +31,19 @@ $ staticcheck -explain SA1019
 https://staticcheck.dev/docs/checks/
 https://staticcheck.dev/docs/running-staticcheck/ci/github-actions/
 ```
+
+<br/>
+
+### Implementing data validation
+
+
+https://github.com/go-playground/validator
+
+
+<br/>
+
+### Implement streaming APIs
+
+```
+$ protoc -I=api --go_out=. --go-grpc_out=. movie.proto
+```
