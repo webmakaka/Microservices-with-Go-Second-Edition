@@ -68,7 +68,7 @@ Part 4: Advanced Topics
 
 <ol start="15">
   <li>📖 Implementing Distributed System Scenarios</li>
-  <li>❌ Advanced Topics</li>
+  <li>✅ Advanced Topics</li>
 </ol>
 
 </details>
