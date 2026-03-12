@@ -1,4 +1,4 @@
-<h1 align="center">[Book][Alexander Shuiskov] Microservices with Go, Second Edition [ENG, 2025]</h1>
+<h1>[Book][Alexander Shuiskov] Microservices with Go, Second Edition [ENG, 2025]</h1>
 
 <h2 align="center">
 The expert's guide to building secure, scalable, and reliable microservices with Go
@@ -7,7 +7,7 @@ The expert's guide to building secure, scalable, and reliable microservices with
 <details open> 
   <summary><h2>About the book</summary>
 
-<img src="https://content.packt.com/B31439/cover_image_small.jpg" alt="Unity Cookbook, Fifth Edition" height="256px" align="right">
+<img src="./img/Microservices-with-Go.jpg" alt="Microservices with Go, Second Edition" height="256px" align="right">
 
 Microservices with Go, Second Edition explains the key benefits and common issues faced by developers when working with microservices, helping you understand the problems microservice architecture solves, the issues it introduces, and how to tackle them.
 The author distils his 18+ years of experience in building scalable and reliable infrastructure to help you grasp the importance of using the right principles and standards to achieve all that microservice architecture has to offer. You'll see why Go is a popular choice for microservice development, as well as navigate its foundational aspects, including service scaffolding, discovery, data serialization, communication, deployment, and testing. After covering development, you'll move to maintenance and reliability. This second edition is fully updated with newly added topics, including security and compliance, distributed system challenges, and performance monitoring. The final section focuses on advanced concepts, such as system reliability, observability, maintainability, and scalability. Through best practices and practical examples, you'll learn how to apply key ideas to existing applications using previously scaffolded services.
