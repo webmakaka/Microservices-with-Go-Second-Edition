@@ -26,8 +26,7 @@ By the end of this book, you'll have gained hands-on experience in developing sc
   </ul>
 </details>
 
-<details open> 
-  <summary><h2>Chapters</summary>
+<summary><h2>Chapters</summary>
 
 <ol>
   <li>📖 Introduction to Microservices</li>
@@ -70,8 +69,6 @@ Part 4: Advanced Topics
   <li>📖 Implementing Distributed System Scenarios</li>
   <li>✅ Advanced Topics</li>
 </ol>
-
-</details>
 
 <br/><br/>
 
